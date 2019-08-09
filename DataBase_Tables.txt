@@ -1,0 +1,76 @@
+SQL> create table country_info(country_id varchar(5) primary key,
+  2  country_name varchar(25),
+  3  state_name varchar(25));
+
+Table created.
+SQL> create table student_mark_primary(student_id varchar(5) primary key,
+  2  english_mark number(3),
+  3  Hindi_mark number(3),
+  4  science_mark number(3),
+  5  maths_mark number(3),
+  6  total_mark number(3),
+  7  average_mark number(5,2));
+
+Table created.
+
+SQL> drop table student_mark_secondary;
+
+Table dropped.
+
+SQL> create table student_mark_secondary(student_id varchar(5) primary key,
+  2  english_mark number(3),
+  3  Hindi_mark number(3),
+  4  science_mark number(3),
+  5  social_mark number(3),
+  6  maths_mark number(3),
+  7  total_mark number(3),
+  8  average_mark number(5,2),
+  9  grade char(1));
+
+Table created.
+
+SQL> create table student_mark_higher(student_id varchar(5) primary key,
+  2  english_mark number(3),
+  3  Tamil_mark number(3),
+  4  physics_mark number(3),
+  5  chemistry_mark number(3),
+  6  computer_mark number(3),
+  7  maths_mark number(3),
+  8  total_mark number(3),
+  9  average_mark number(5,2),
+ 10  grade char(1));
+
+Table created.
+SQL> create table Student_info(Student_Id number(5) primary key,
+  2  Student_name varchar(30),
+  3  Date_of_birth date,
+  4  Guardian_type char(1),
+  5  Guardian_name varchar(30),
+  6  Address varchar(50),
+  7  country_id varchar(5),
+  8  contact_no number(10),
+  9  mail_id varchar(30),
+ 10  gender char(1),
+ 11  standard varchar(3),
+ 12  standard_category char,
+ 13  transport char,
+ 14  net_fees number(7,2),
+ 15  foreign key (country_id) references country_info(country_id));
+
+Table created.
+
+SQL> create table staff_info(staff_id varchar(5) primary key,
+  2  staff_name varchar(25),
+  3  date_of_birth date,
+  4  address varchar(5),
+  5  gender char,
+  6  salary number(7,2),
+  7  highest_qualification varchar(20),
+  8  email_id varchar(20),
+  9  contact_number number(10),
+ 10  designation varchar(20),
+ 11  year_passed_out number(5),
+ 12  experience number(2),
+ 13  doj date);
+
+Table created.
